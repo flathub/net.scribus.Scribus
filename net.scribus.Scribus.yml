@@ -9,7 +9,7 @@ rename-desktop-file: scribus.desktop
 rename-appdata-file: scribus.appdata.xml
 rename-icon:         scribus
 
-# Mark as snapshot
+# Mark as beta
 tags:
   - beta
 desktop-file-name-suffix: ' (Beta)'
