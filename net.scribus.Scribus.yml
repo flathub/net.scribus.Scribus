@@ -27,6 +27,12 @@ finish-args:
   # Ability to edit/save files anywhere
   - --filesystem=host
 
+build-options:
+  cppflags: "-O2 -D_FORTIFY_SOURCE=2"
+  cflags: "-O2 -g -fstack-protector-strong"
+  cxxflags: "-O2 -g -fstack-protector-strong"
+  ldflags: "-fstack-protector-strong -Wl,-z,relro,-z,now"
+
 modules:
   - name: podofo
     buildsystem: cmake-ninja
