@@ -11,8 +11,8 @@ rename-icon:         scribus
 
 # Mark as snapshot
 tags:
-  - snapshot
-desktop-file-name-prefix: '(Development) '
+  - beta
+desktop-file-name-suffix: ' (Beta)'
 
 finish-args:
   # X11 + XShm access
