@@ -5,8 +5,8 @@ Subject: [PATCH] #15289: FTBFS when using poppler 0.64.0
 
 git-svn-id: svn://scribus.net/trunk/Scribus@22513 11d20701-8431-0410-a711-e3c959e3b870
 ---
- scribus/plugins/import/pdf/slaoutput.cpp | 42 +++++++++++++++++---------------
- scribus/plugins/import/pdf/slaoutput.h   | 26 +++++++++++++++-----
+ scribus/plugins/import/pdf/slaoutput.cpp | 42 +++++++++++++-----------
+ scribus/plugins/import/pdf/slaoutput.h   | 26 +++++++++++----
  2 files changed, 42 insertions(+), 26 deletions(-)
 
 diff --git a/scribus/plugins/import/pdf/slaoutput.cpp b/scribus/plugins/import/pdf/slaoutput.cpp
