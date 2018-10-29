@@ -337,7 +337,16 @@ modules:
       - type:   archive
         url:    https://sourceforge.net/projects/scribus/files/scribus-devel/1.5.4/scribus-1.5.4.tar.xz
         sha256: 6480925250b2bb07028e2f378c02b67fe3e33206743671e03c07c701cd05da03
+      # https://git.archlinux.org/svntogit/community.git/tree/trunk?h=packages/scribus
+      # Poppler 0.64
       - type:   patch
-        path:   fix-15289.patch
+        path:   d867ec3c386baaed1b8e076dd70b278863411480.patch
       - type:   patch
-        path:   fix-15289-2.patch
+        path:   7d4ceeb5cac32287769e3c0238699e0b3e56c24d.patch
+      - type:   patch
+        path:   76561c1a55cd07c268f8f2b2fea888532933700b.patch
+      # Poppler 0.70
+      - type:   patch
+        path:   8e05d26c19097ac2ad5b4ebbf40a3771ee6faf9c.patch
+      - type:   patch
+        path:   scribus-poppler-0.70.patch
