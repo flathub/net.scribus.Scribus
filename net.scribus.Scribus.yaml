@@ -50,7 +50,6 @@ modules:
       - /lib/pkgconfig
       - /bin
 
-
   - name: graphicsmagick
     config-opts:
       - --enable-shared
@@ -72,7 +71,6 @@ modules:
       - /bin
       - /share/man
       - /share/doc
-
 
   - name: poppler
     buildsystem: cmake-ninja
@@ -102,7 +100,6 @@ modules:
             sha256: 1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012
         cleanup:
           - /share/pkgconfig
-
       - name: openjpeg2
         buildsystem: cmake-ninja
         config-opts:
@@ -116,7 +113,6 @@ modules:
           - '*.a'
           - /lib/pkgconfig
           - /lib/openjpeg-2.3
-
 
   - name: ghostscript
     config-opts:
@@ -137,35 +133,9 @@ modules:
       - /share/man
       - /share/ghostscript/9.26/doc
       - /share/ghostscript/9.26/examples
-      # This is horrible, all we want to do is leave one file
-      - dvipdf
-      - font2c
-      - gsbj
-      - gsdj500
-      - gslp
-      - lprsetup.sh
-      - pdf2ps
-      - pf2afm
-      - printafm
-      - ps2epsi
-      - ps2pdfwr
-      - ps2pdf13
-      - ps2ps
-      - wftopfa
-      - eps2eps
-      - gsdj
-      - gslj
-      - gsnd
-      - pdf2dsc
-      - pfbtopfa
-      - pphs
-      - ps2ascii
-      - ps2pdf
-      - ps2pdf12
-      - ps2pdf14
-      - ps2ps2
-      - unix-lpr.sh
-
+    cleanup-commands:
+      # Delete all binaries but the main one
+      - find . -type f ! -name 'gs' -delete
 
   - name: tkinter
     disabled: true
@@ -180,7 +150,6 @@ modules:
       - chmod 0755 /app/lib/libtcl8.6.so
       - ln -s /app/bin/tclsh8.6 /app/bin/tclsh
 
-
   - name: boost
     buildsystem: simple
     build-commands:
@@ -192,7 +161,6 @@ modules:
         sha256: 7f6130bc3cf65f56a618888ce9d5ea704fa10b462be126ad053e80e553d6d8b7
     cleanup:
       - /include
-
 
   - name: cppunit
     config-opts:
@@ -216,7 +184,6 @@ modules:
       - '*.la'
       - /lib/pkgconfig
 
-
   - name: libmspub
     config-opts:
       - --without-docs
@@ -229,7 +196,6 @@ modules:
       - /include
       - '*.la'
       - /lib/pkgconfig
-
 
   - name: libcdr
     config-opts:
@@ -248,7 +214,6 @@ modules:
       - '*.la'
       - /lib/pkgconfig
 
-
   - name: libvisio
     config-opts:
       - --without-docs
@@ -266,7 +231,6 @@ modules:
       - '*.la'
       - /lib/pkgconfig
 
-
   - name: libpagemaker
     config-opts:
       - --without-docs
@@ -279,7 +243,6 @@ modules:
       - /include
       - '*.la'
       - /lib/pkgconfig
-
 
   - name: libfreehand
     config-opts:
@@ -294,7 +257,6 @@ modules:
       - '*.la'
       - /lib/pkgconfig
 
-
   - name: libqxp
     config-opts:
       - --without-docs
@@ -307,7 +269,6 @@ modules:
       - /include
       - '*.la'
       - /lib/pkgconfig
-
 
   - name: libzmf
     config-opts:
@@ -322,7 +283,6 @@ modules:
       - /include
       - '*.la'
       - /lib/pkgconfig
-
 
   - name: scribus
     buildsystem: cmake-ninja
