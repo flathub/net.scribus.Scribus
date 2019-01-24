@@ -1,7 +1,7 @@
 app-id: net.scribus.Scribus
 
 runtime: org.kde.Platform
-runtime-version: '5.11'
+runtime-version: '5.12'
 sdk: org.kde.Sdk
 
 command: scribus
@@ -26,13 +26,6 @@ finish-args:
   - --socket=pulseaudio
   # Ability to edit/save files anywhere
   - --filesystem=host
-
-# From https://gitlab.com/freedesktop-sdk/freedesktop-sdk/blob/18.08/project.conf#L51
-# Can be removed after switching to the 5.12 SDK
-build-options:
-  cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches
-  cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches
-  ldflags: -Wl,--as-needed,-z,relro,-z,now
 
 modules:
   - name: podofo
@@ -201,6 +194,7 @@ modules:
   - name: librevenge
     config-opts:
       - --without-docs
+      - --disable-werror
     sources:
       - type: archive
         url: https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.4/librevenge-0.0.4.tar.xz
@@ -227,6 +221,7 @@ modules:
     config-opts:
       - --without-docs
       - --disable-tools
+      - --disable-werror
     sources:
       - type: archive
         url: https://dev-www.libreoffice.org/src/libcdr/libcdr-0.1.4.tar.xz
@@ -261,6 +256,7 @@ modules:
     config-opts:
       - --without-docs
       - --disable-tools
+      - --disable-werror
     sources:
       - type: archive
         url: https://dev-www.libreoffice.org/src/libpagemaker/libpagemaker-0.0.4.tar.xz
@@ -274,6 +270,7 @@ modules:
     config-opts:
       - --without-docs
       - --disable-tools
+      - --disable-werror
     sources:
       - type: archive
         url: https://dev-www.libreoffice.org/src/libfreehand/libfreehand-0.1.2.tar.xz
