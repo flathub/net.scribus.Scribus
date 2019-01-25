@@ -59,11 +59,11 @@ modules:
         sha256: d965e5c6559f55eec76c20231c095d4ae682ea0cbdd8453249ae8771405659f1
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
       - /bin
       - /share/man
       - /share/doc
+      - '*.la'
 
   - name: poppler
     buildsystem: cmake-ninja
@@ -81,8 +81,8 @@ modules:
         sha256: 27cc8addafc791e1a26ce6acc2b490926ea73a4f89196dd8a7742cff7cf8a111
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
+      - '*.la'
     modules:
       - name: popplerdata
         no-autogen: true
@@ -94,7 +94,6 @@ modules:
             sha256: 1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012
         cleanup:
           - /share/pkgconfig
-
       - name: openjpeg2
         buildsystem: cmake-ninja
         config-opts:
@@ -105,9 +104,9 @@ modules:
             sha256: 3dc787c1bb6023ba846c2a0d9b1f6e179f1cd255172bde9eb75b01f1e6c7d71a
         cleanup:
           - /include
-          - '*.a'
           - /lib/pkgconfig
           - /lib/openjpeg-2.3
+          - '*.a'
 
   - name: ghostscript
     config-opts:
@@ -126,8 +125,8 @@ modules:
           - rm -rf libpng/pngread.c
     cleanup:
       - /share/man
-      - /share/ghostscript/9.26/doc
-      - /share/ghostscript/9.26/examples
+      - /share/ghostscript/*/doc
+      - /share/ghostscript/*/examples
       # This is horrible, all we want to do is leave one file
       - dvipdf
       - font2c
@@ -180,7 +179,7 @@ modules:
         url: https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.bz2
         sha256: 7f6130bc3cf65f56a618888ce9d5ea704fa10b462be126ad053e80e553d6d8b7
     cleanup:
-      - /include
+      - '*'
 
   - name: cppunit
     config-opts:
@@ -202,8 +201,8 @@ modules:
         sha256: 933f0729f04267cc354b9a02bc3e9afefa5512a3bdd0b45f159ee14a3e3347b2
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
+      - '*.la'
 
   - name: libmspub
     config-opts:
@@ -233,8 +232,8 @@ modules:
           - cp -p /usr/share/automake-*/config.{sub,guess} .
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
+      - '*.la'
 
   - name: libvisio
     config-opts:
@@ -250,8 +249,8 @@ modules:
           - cp -p /usr/share/automake-*/config.{sub,guess} .
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
+      - '*.la'
 
   - name: libpagemaker
     config-opts:
@@ -264,8 +263,8 @@ modules:
         sha256: 66adacd705a7d19895e08eac46d1e851332adf2e736c566bef1164e7a442519d
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
+      - '*.la'
 
   - name: libfreehand
     config-opts:
@@ -278,8 +277,8 @@ modules:
         sha256: 0e422d1564a6dbf22a9af598535425271e583514c0f7ba7d9091676420de34ac
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
+      - '*.la'
 
   - name: libqxp
     config-opts:
@@ -291,8 +290,8 @@ modules:
         sha256: 8c257f6184ff94aefa7c9fa1cfae82083d55a49247266905c71c53e013f95c73
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
+      - '*.la'
 
   - name: libzmf
     config-opts:
@@ -305,8 +304,8 @@ modules:
         sha256: 27051a30cb057fdb5d5de65a1f165c7153dc76e27fe62251cbb86639eb2caf22
     cleanup:
       - /include
-      - '*.la'
       - /lib/pkgconfig
+      - '*.la'
 
   - name: scribus
     buildsystem: cmake-ninja
