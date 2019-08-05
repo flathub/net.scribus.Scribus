@@ -320,5 +320,5 @@ modules:
       - ln -sf /usr/share/hyphen /app/share/scribus/dicts/hyph
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/scribus/files/scribus-devel/1.5.4/scribus-1.5.4.tar.xz
-        sha256: 6480925250b2bb07028e2f378c02b67fe3e33206743671e03c07c701cd05da03
+        url: https://downloads.sourceforge.net/project/scribus/scribus-devel/1.5.5/scribus-1.5.5.tar.xz
+        sha256: 7908b21a6ce843269f58cedf5f8f791893257e6201cce5fbddc70daca2fe3f71
