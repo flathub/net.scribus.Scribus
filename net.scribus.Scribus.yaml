@@ -78,8 +78,8 @@ modules:
       - -DENABLE_QT5=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-0.79.0.tar.xz
-        sha256: f985a4608fe592d2546d9d37d4182e502ff6b4c42f8db4be0a021a1c369528c8
+        url: https://poppler.freedesktop.org/poppler-0.76.0.tar.xz
+        sha256: 370f5fcfe2bbf0c76fc394d338cd72ed7f2044b67f4eb4b115eb074ccfc70d63
     cleanup:
       - /include
       - /lib/pkgconfig
