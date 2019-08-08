@@ -70,14 +70,15 @@ modules:
   - name: poppler
     buildsystem: cmake-ninja
     config-opts:
-      - -DENABLE_XPDF_HEADERS=ON
+      - -DENABLE_UNSTABLE_API_ABI_HEADERS=ON
       - -DBUILD_GTK_TESTS=OFF
       - -DBUILD_QT5_TESTS=OFF
       - -DENABLE_UTILS=OFF
       - -DENABLE_GLIB=OFF
       - -DENABLE_QT5=OFF
-      - -DPOPPLER_INCLUDE_DIR=/app/include
-      - -DPOPPLER_CPP_INCLUDE_DIR=/app/include
+    post-install:
+      - cp poppler/poppler-config.h /app/include/poppler/goo
+      - cp poppler/poppler-config.h /app/include/poppler/splash
     sources:
       - type: archive
         url: https://poppler.freedesktop.org/poppler-0.76.0.tar.xz
@@ -314,6 +315,8 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DWANT_GRAPHICSMAGICK=1
+      - -DPOPPLER_INCLUDE_DIR=/app/include
+      - -DPOPPLER_CPP_INCLUDE_DIR=/app/include
     post-install:
       - mv /app/share/mime/packages/scribus.xml /app/share/mime/packages/net.scribus.Scribus.xml
       # Use system hyphen
