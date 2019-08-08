@@ -76,6 +76,8 @@ modules:
       - -DENABLE_UTILS=OFF
       - -DENABLE_GLIB=OFF
       - -DENABLE_QT5=OFF
+      - -DPOPPLER_INCLUDE_DIR=/app/include
+      - -DPOPPLER_CPP_INCLUDE_DIR=/app/include
     sources:
       - type: archive
         url: https://poppler.freedesktop.org/poppler-0.76.0.tar.xz
