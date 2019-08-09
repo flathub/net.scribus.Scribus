@@ -70,17 +70,19 @@ modules:
   - name: poppler
     buildsystem: cmake-ninja
     config-opts:
-      - -DENABLE_XPDF_HEADERS=ON
+      - -DENABLE_UNSTABLE_API_ABI_HEADERS=ON
       - -DBUILD_GTK_TESTS=OFF
       - -DBUILD_QT5_TESTS=OFF
       - -DENABLE_UTILS=OFF
       - -DENABLE_GLIB=OFF
       - -DENABLE_QT5=OFF
+    post-install:
+      - cp poppler/poppler-config.h /app/include/poppler/goo
+      - cp poppler/poppler-config.h /app/include/poppler/splash
     sources:
-      # Last version Scribus 1.5.4 builds with
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-0.63.0.tar.xz
-        sha256: 27cc8addafc791e1a26ce6acc2b490926ea73a4f89196dd8a7742cff7cf8a111
+        url: https://poppler.freedesktop.org/poppler-0.76.0.tar.xz
+        sha256: 370f5fcfe2bbf0c76fc394d338cd72ed7f2044b67f4eb4b115eb074ccfc70d63
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -313,12 +315,19 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DWANT_GRAPHICSMAGICK=1
+      - -DPOPPLER_INCLUDE_DIR=/app/include
+      - -DPOPPLER_CPP_INCLUDE_DIR=/app/include
     post-install:
       - mv /app/share/mime/packages/scribus.xml /app/share/mime/packages/net.scribus.Scribus.xml
       # Use system hyphen
       - rm -rf /app/share/scribus/dicts/hyph
       - ln -sf /usr/share/hyphen /app/share/scribus/dicts/hyph
+      - rm -rf /app/share/icons/hicolor/1024x1024
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/scribus/files/scribus-devel/1.5.4/scribus-1.5.4.tar.xz
-        sha256: 6480925250b2bb07028e2f378c02b67fe3e33206743671e03c07c701cd05da03
+        url: https://downloads.sourceforge.net/project/scribus/scribus-devel/1.5.5/scribus-1.5.5.tar.xz
+        sha256: 7908b21a6ce843269f58cedf5f8f791893257e6201cce5fbddc70daca2fe3f71
+      - type: shell
+        commands:
+          - sed -i '4i <releases><release version="1.5.5" date="2019-07-31"/></releases><content_rating type="oars-1.1"/>'
+            scribus.appdata.xml.in
