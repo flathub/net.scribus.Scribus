@@ -18,8 +18,9 @@ finish-args:
   # X11 + XShm access
   - --socket=x11
   - --share=ipc
-  # Wayland
+  # Enable Wayland but keep X11 default for now
   - --socket=wayland
+  - --env=QT_QPA_PLATFORM=xcb
   # Acceleration
   - --device=dri
   # Sound
