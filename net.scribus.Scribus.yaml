@@ -29,7 +29,7 @@ finish-args:
   - --filesystem=host
 
 modules:
-  - shared-modules/python2.7/python-2.7.15.json
+  - shared-modules/python2.7/python-2.7.json
 
   - name: podofo
     buildsystem: cmake-ninja
