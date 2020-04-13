@@ -27,6 +27,8 @@ finish-args:
   - --socket=pulseaudio
   # Ability to edit/save files anywhere
   - --filesystem=host
+  # Printing
+  - --socket=cups
 
 modules:
   - shared-modules/python2.7/python-2.7.json
