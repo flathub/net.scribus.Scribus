@@ -1,7 +1,7 @@
 app-id: net.scribus.Scribus
 
 runtime: org.kde.Platform
-runtime-version: '5.12'
+runtime-version: '5.14'
 sdk: org.kde.Sdk
 
 command: scribus
