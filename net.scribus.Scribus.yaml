@@ -320,5 +320,5 @@ modules:
         revision: '23606'
       - type: shell
         commands:
-          - sed -i '4i <releases><release version="1.5.5+" date="2019-07-31"/></releases><content_rating type="oars-1.1"/>'
-            scribus.appdata.xml.in
+          - sed -e '4i <releases><release version="1.5.6.svn" date="2020-04-13"/></releases><content_rating type="oars-1.1"/>' -i scribus.appdata.xml.in
+          - sed -e 's|/usr/share/color/icc/|/run/host/usr/share/color/icc/|' -i scribus/scpaths.cpp
