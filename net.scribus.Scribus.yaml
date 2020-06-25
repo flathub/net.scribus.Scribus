@@ -29,6 +29,7 @@ finish-args:
   - --filesystem=host
   # Printing
   - --socket=cups
+  - --share=network
 
 modules:
   - shared-modules/python2.7/python-2.7.json
