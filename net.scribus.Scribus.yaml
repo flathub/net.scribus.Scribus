@@ -1,7 +1,7 @@
 app-id: net.scribus.Scribus
 
 runtime: org.kde.Platform
-runtime-version: '5.14'
+runtime-version: '5.15'
 sdk: org.kde.Sdk
 
 command: scribus
@@ -208,6 +208,8 @@ modules:
       - type: archive
         url: https://dev-www.libreoffice.org/src/libmspub-0.1.4.tar.xz
         sha256: ef36c1a1aabb2ba3b0bedaaafe717bf4480be2ba8de6f3894be5fd3702b013ba
+      - type: patch
+        path: libmspub-0.1.4-gcc10.patch
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -271,6 +273,8 @@ modules:
       - type: archive
         url: https://dev-www.libreoffice.org/src/libfreehand-0.1.2.tar.xz
         sha256: 0e422d1564a6dbf22a9af598535425271e583514c0f7ba7d9091676420de34ac
+      - type: patch
+        path: libfreehand-0.1.2-icu-fix.patch
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -318,8 +322,8 @@ modules:
     sources:
       - type: svn
         url: svn://scribus.net/trunk/Scribus
-        revision: '23606'
+        revision: '24026'
       - type: shell
         commands:
-          - sed -e '4i <releases><release version="1.5.6.svn" date="2020-04-13"/></releases><content_rating type="oars-1.1"/>' -i scribus.appdata.xml.in
+          - sed -e '4i <releases><release version="1.5.6.svn" date="2020-09-24"/></releases><content_rating type="oars-1.1"/>' -i scribus.appdata.xml.in
           - sed -e 's|/usr/share/color/icc/|/run/host/usr/share/color/icc/|' -i scribus/scpaths.cpp
