@@ -320,10 +320,9 @@ modules:
       - ln -sf /usr/share/hyphen /app/share/scribus/dicts/hyph
       - rm -rf /app/share/icons/hicolor/1024x1024
     sources:
-      - type: svn
-        url: svn://scribus.net/trunk/Scribus
-        revision: '24026'
+      - type: archive
+        url: https://downloads.sourceforge.net/project/scribus/scribus-devel/1.5.6.1/scribus-1.5.6.1.tar.xz
+        sha256: d4257695539cfa40dead8abdaf04c51e34d4d74bcad5a2c934d08e6e9d43b7ab
       - type: shell
         commands:
-          - sed -e '4i <releases><release version="1.5.6.svn" date="2020-09-24"/></releases><content_rating type="oars-1.1"/>' -i scribus.appdata.xml.in
           - sed -e 's|/usr/share/color/icc/|/run/host/usr/share/color/icc/|' -i scribus/scpaths.cpp
