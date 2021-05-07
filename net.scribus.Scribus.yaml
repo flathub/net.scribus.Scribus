@@ -172,7 +172,7 @@ modules:
       - mv boost /app/include
     sources:
       - type: archive
-        url: https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.bz2
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.69.0/source/boost_1_69_0.tar.bz2
         sha256: 8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406
     cleanup:
       - '*'
@@ -321,8 +321,8 @@ modules:
       - rm -rf /app/share/icons/hicolor/1024x1024
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/project/scribus/scribus-devel/1.5.6.1/scribus-1.5.6.1.tar.xz
-        sha256: d4257695539cfa40dead8abdaf04c51e34d4d74bcad5a2c934d08e6e9d43b7ab
+        url: https://downloads.sourceforge.net/project/scribus/scribus-devel/1.5.7/scribus-1.5.7.tar.xz
+        sha256: 318316b2cfc7a76191d3e0d3f8c2265147daea0570162028e243c292d826f8ce
       - type: shell
         commands:
           - sed -e 's|/usr/share/color/icc/|/run/host/usr/share/color/icc/|' -i scribus/scpaths.cpp
