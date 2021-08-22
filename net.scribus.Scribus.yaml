@@ -299,12 +299,20 @@ modules:
       - /lib/pkgconfig
       - '*.la'
 
+  - name: osg
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    sources:
+      - type: git
+        url: https://github.com/openscenegraph/OpenSceneGraph.git
+        tag: OpenSceneGraph-3.6.5
+        commit: a827840baf0786d72e11ac16d5338a4ee25779db
+
   - name: scribus
     buildsystem: cmake-ninja
     config-opts:
       - -DWANT_GRAPHICSMAGICK=1
-      - -DPOPPLER_INCLUDE_DIR=/app/include
-      - -DPOPPLER_CPP_INCLUDE_DIR=/app/include
     post-install:
       - mv /app/share/mime/packages/scribus.xml /app/share/mime/packages/net.scribus.Scribus.xml
       # Use system hyphen
