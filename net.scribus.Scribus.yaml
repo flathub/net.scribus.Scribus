@@ -364,12 +364,8 @@ modules:
       - rm -rf /app/share/icons/hicolor/1024x1024
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/project/scribus/scribus-devel/1.5.7/scribus-1.5.7.tar.xz
-        sha256: 318316b2cfc7a76191d3e0d3f8c2265147daea0570162028e243c292d826f8ce
-      - type: patch
-        path: scribus-harfbuzz-3-1.patch
-      - type: patch
-        path: scribus-harfbuzz-3-2.patch
+        url: https://downloads.sourceforge.net/project/scribus/scribus-devel/1.5.8/scribus-1.5.8.tar.xz
+        sha256: 47816e8fcf6d05788ff16aa4499f97ff22431c777a7789149b0a88b451e16b74
       - type: shell
         commands:
           - sed -e 's|/usr/share/color/icc/|/run/host/usr/share/color/icc/|' -i scribus/scpaths.cpp
