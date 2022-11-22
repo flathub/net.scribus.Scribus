@@ -1,7 +1,7 @@
 app-id: net.scribus.Scribus
 
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 sdk: org.kde.Sdk
 
 command: scribus
@@ -54,8 +54,8 @@ modules:
           - /man
         sources:
           - type: archive
-            url: https://prdownloads.sourceforge.net/tcl/tcl8.6.12-src.tar.gz
-            sha256: 26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6
+            url: https://prdownloads.sourceforge.net/tcl/tcl8.6.13-src.tar.gz
+            sha256: 43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066
             x-checker-data:
               type: anitya
               project-id: 4941
@@ -72,8 +72,8 @@ modules:
           - /man
         sources:
           - type: archive
-            url: https://prdownloads.sourceforge.net/tcl/tk8.6.12-src.tar.gz
-            sha256: 12395c1f3fcb6bed2938689f797ea3cdf41ed5cb6c4766eec8ac949560310630
+            url: https://prdownloads.sourceforge.net/tcl/tk8.6.13-src.tar.gz
+            sha256: 2e65fa069a23365440a3c56c556b8673b5e32a283800d8d9b257e3f584ce0675
             x-checker-data:
               type: anitya
               project-id: 11426
@@ -349,7 +349,8 @@ modules:
         url: https://files.pythonhosted.org/packages/3e/02/b09732ca4b14405ff159c470a612979acfc6e8645dc32f83ea0129709f7a/Pillow-7.2.0.tar.gz
         sha256: 97f9e7953a77d5a70f49b9a48da7776dc51e9b738151b22dacf101641594a626
     build-commands:
-      - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} Pillow
+      - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}
+        Pillow
 
   - name: scribus
     buildsystem: cmake-ninja
