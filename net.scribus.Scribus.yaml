@@ -1,7 +1,7 @@
 app-id: net.scribus.Scribus
 
 runtime: org.kde.Platform
-runtime-version: 5.15-21.08
+runtime-version: '5.15-22.08'
 sdk: org.kde.Sdk
 
 command: scribus
@@ -18,8 +18,6 @@ finish-args:
   # X11 + XShm access
   - --socket=x11
   - --share=ipc
-  # Enable Wayland but keep X11 default for now
-  - --socket=wayland
   - --env=QT_QPA_PLATFORM=xcb
   # Acceleration
   - --device=dri
@@ -332,6 +330,47 @@ modules:
       - /lib/pkgconfig
       - '*.la'
 
+  # OSG wants ffmpeg 4 and not 5 (in the runtime).
+  # Unsure of the options.
+  - name: ffmpeg
+    config-opts:
+      - --enable-shared
+      - --disable-static
+      - --disable-doc
+      - --disable-manpages
+      - --disable-stripping
+      - --disable-ffplay
+      - --disable-ffprobe
+      - --enable-gpl
+      - --enable-version3
+      - --enable-optimizations
+      - --enable-postproc
+      - --enable-pthreads
+      - --enable-gnutls
+      - --enable-libxcb-xfixes
+      - --enable-opengl
+      - --enable-vaapi
+      - --enable-vdpau
+      - --enable-zlib
+      - --enable-bzlib
+      - --enable-lzma
+      - --enable-fontconfig
+      - --enable-libfontconfig
+      - --enable-libfreetype
+      - --enable-avcodec
+      - --enable-avfilter
+      - --enable-avresample
+      - --enable-libxml2
+      - --enable-swscale
+      - --enable-libxcb
+      - --enable-protocol=file
+    cleanup:
+      - /share/ffmpeg/examples
+    sources:
+      - type: archive
+        url: https://ffmpeg.org/releases/ffmpeg-4.2.tar.xz
+        sha256: 023f10831a97ad93d798f53a3640e55cd564abfeba807ecbe8524dac4fedecd5
+
   - name: osg
     buildsystem: cmake-ninja
     config-opts:
@@ -358,7 +397,7 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DWANT_GRAPHICSMAGICK=1
     post-install:
-      - mv /app/share/mime/packages/scribus.xml /app/share/mime/packages/net.scribus.Scribus.xml
+      - mv /app/share/mime/packages/scribus.xml /app/share/mime/packages/${FLATPAK_ID}.xml
       # Use system hyphen
       - rm -rf /app/share/scribus/dicts/hyph
       - ln -sf /usr/share/hyphen /app/share/scribus/dicts/hyph
