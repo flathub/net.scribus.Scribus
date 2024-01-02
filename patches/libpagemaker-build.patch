@@ -1,0 +1,13 @@
+diff --git a/src/lib/PMDTypes.h b/src/lib/PMDTypes.h
+index 5a7a9db..b5f36ea 100644
+--- a/src/lib/PMDTypes.h
++++ b/src/lib/PMDTypes.h
+@@ -10,6 +10,8 @@
+ #ifndef __PMDTYPES_H__
+ #define __PMDTYPES_H__
+ 
++#include <cstdint>
++
+ #include <boost/optional.hpp>
+ 
+ #include "Units.h"
