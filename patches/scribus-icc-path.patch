@@ -1,0 +1,13 @@
+diff --git a/scribus/scpaths.cpp b/scribus/scpaths.cpp
+index 0a0185a..e5141f5 100644
+--- a/scribus/scpaths.cpp
++++ b/scribus/scpaths.cpp
+@@ -433,7 +433,7 @@ QStringList ScPaths::systemProfilesDirs()
+ 	iccProfDirs.append(QDir::homePath()+"/.local/share/icc/");
+ 	iccProfDirs.append(QDir::homePath()+"/.local/share/color/icc/");
+ 	iccProfDirs.append("/usr/share/color/icc/");
+-	iccProfDirs.append("/usr/local/share/color/icc/");
++	iccProfDirs.append("/run/host/usr/share/color/icc/");
+ 	iccProfDirs.append("/var/lib/color/icc/");
+ #elif defined(_WIN32)
+ 	WCHAR sysDir[MAX_PATH + 1] = { 0 };

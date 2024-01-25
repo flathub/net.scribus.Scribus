@@ -135,13 +135,14 @@ modules:
       - -DENABLE_UTILS=OFF
       - -DENABLE_GLIB=OFF
       - -DENABLE_QT5=OFF
+      - -DENABLE_QT6=OFF
     post-install:
       - cp poppler/poppler-config.h /app/include/poppler/goo
       - cp poppler/poppler-config.h /app/include/poppler/splash
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-21.12.0.tar.xz
-        sha256: acb840c2c1ec07d07e53c57c4b3a1ff3e3ee2d888d44e1e9f2f01aaf16814de7
+        url: https://poppler.freedesktop.org/poppler-24.01.0.tar.xz
+        sha256: c7def693a7a492830f49d497a80cc6b9c85cb57b15e9be2d2d615153b79cae08
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -407,8 +408,9 @@ modules:
       - rm -rf /app/share/icons/hicolor/1024x1024
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/project/scribus/scribus/1.6.0/scribus-1.6.0.tar.xz
-        sha256: 94b97490ece172868dc4f04c7aa2ee950b41b5f2ff4285df37d615f044d038e5
-      - type: shell
-        commands:
-          - sed -e 's|/usr/share/color/icc/|/run/host/usr/share/color/icc/|' -i scribus/scpaths.cpp
+        url: https://downloads.sourceforge.net/project/scribus/scribus/1.6.1/scribus-1.6.1.tar.xz
+        sha256: e09dd78e6db61d01b9321108fededbccd6ec0ab352dd5bafdb8b041f0ef79e99
+      - type: patch
+        paths:
+          - patches/scribus-appdata.patch
+          - patches/scribus-icc-path.patch
