@@ -8,11 +8,9 @@ command: scribus
 rename-desktop-file: scribus.desktop
 rename-appdata-file: scribus.appdata.xml
 rename-icon: scribus
-
-# Mark as beta
-tags:
-  - beta
-desktop-file-name-suffix: ' (Beta)'
+rename-mime-file: scribus.xml
+rename-mime-icons:
+  - application-vnd.scribus
 
 finish-args:
   # X11 + XShm access
@@ -401,7 +399,6 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DWANT_GRAPHICSMAGICK=1
     post-install:
-      - mv /app/share/mime/packages/scribus.xml /app/share/mime/packages/${FLATPAK_ID}.xml
       # Use system hyphen
       - rm -rf /app/share/scribus/dicts/hyph
       - ln -sf /usr/share/hyphen /app/share/scribus/dicts/hyph

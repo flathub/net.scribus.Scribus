@@ -2,9 +2,21 @@ diff --git a/scribus.appdata.xml.in b/scribus.appdata.xml.in
 index c38ef6b..e753dc9 100644
 --- a/scribus.appdata.xml.in
 +++ b/scribus.appdata.xml.in
-@@ -33,6 +33,7 @@ separations.</p>
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- Copyright 2016 Peter Linnell  plinnell@scribus.net, The Scribus Team 2022-2024> -->
+-<component>
+-  <id type="desktop">scribus@TAG_VERSION@.desktop</id>
++<component type="desktop-application">
++  <id>scribus@TAG_VERSION@.desktop</id>
+   <metadata_license>CC0-1.0</metadata_license>
+   <name>Scribus</name>
+   <project_license>GPL-2.0+</project_license>
+@@ -33,6 +33,9 @@ separations.</p>
    <update_contact>scribus-dev@lists.scribus.net</update_contact>
    <content_rating type="oars-1.0"/>
++  <developer_name>Scribus developers</developer_name>
++  <launchable type="desktop-id">net.scribus.Scribus.desktop</launchable>
    <releases>
 +    <release version="1.6.1" date="2024-01-07" type="stable"/>
      <release version="1.6.0" date="2024-01-01" type="stable"/>
