@@ -119,8 +119,8 @@ modules:
       - mv boost /app/include
     sources:
       - type: archive
-        url: https://download.sourceforge.net/project/boost/boost/1.72.0/boost_1_72_0.tar.bz2
-        sha256: 59c9b274bc451cf91a9ba1dd2c7fdcaf5d60b1b3aa83f2c9fa143417cc660722
+        url: https://download.sourceforge.net/project/boost/boost/1.74.0/boost_1_74_0.tar.bz2
+        sha256: 83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1
     cleanup:
       - '*'
 
@@ -139,8 +139,8 @@ modules:
       - cp poppler/poppler-config.h /app/include/poppler/splash
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-24.01.0.tar.xz
-        sha256: c7def693a7a492830f49d497a80cc6b9c85cb57b15e9be2d2d615153b79cae08
+        url: https://poppler.freedesktop.org/poppler-24.08.0.tar.xz
+        sha256: 97453fbddf0c9a9eafa0ea45ac710d3d49bcf23a62e864585385d3c0b4403174
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -405,8 +405,8 @@ modules:
       - rm -rf /app/share/icons/hicolor/1024x1024
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/project/scribus/scribus/1.6.1/scribus-1.6.1.tar.xz
-        sha256: e09dd78e6db61d01b9321108fededbccd6ec0ab352dd5bafdb8b041f0ef79e99
+        url: https://downloads.sourceforge.net/project/scribus/scribus/1.6.2/scribus-1.6.2.tar.xz
+        sha256: 7eff9b1f47e372e56bb369f1dbe18fe49101789b5e6bcfdb7890e0346b641383
       - type: patch
         paths:
           - patches/scribus-appdata.patch
