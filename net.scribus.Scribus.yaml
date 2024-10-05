@@ -55,6 +55,8 @@ modules:
               type: anitya
               project-id: 4941
               stable-only: true
+              versions:
+                "<": "9"
               url-template: https://prdownloads.sourceforge.net/tcl/tcl$version-src.tar.gz
       - name: tk
         buildsystem: autotools
@@ -73,6 +75,8 @@ modules:
               type: anitya
               project-id: 11426
               stable-only: true
+              versions:
+                "<": "9"
               url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
 
   - name: podofo
@@ -163,6 +167,7 @@ modules:
       - --disable-cups
       - --disable-dbus
       - --disable-gtk
+      - --disable-static
       - --enable-dynamic
       - --with-drivers=FILES
     sources:
