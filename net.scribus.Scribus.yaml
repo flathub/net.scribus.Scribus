@@ -13,16 +13,11 @@ rename-mime-icons:
   - application-vnd.scribus
 
 finish-args:
-  # X11 + XShm access
   - --socket=x11
   - --share=ipc
-  # Acceleration
   - --device=dri
-  # Sound
   - --socket=pulseaudio
-  # Ability to edit/save files anywhere
   - --filesystem=host
-  # Printing
   - --socket=cups
   - --share=network
   - --env=QT_AUTO_SCREEN_SCALE_FACTOR=1
@@ -403,8 +398,8 @@ modules:
       - rm -rf /app/share/icons/hicolor/1024x1024
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/project/scribus/scribus/1.6.3/scribus-1.6.3.tar.xz
-        sha256: 0ae58ced410101e82655e3b4c20a070cf1767145ada233dcef7c20b8ba6bd487
+        url: https://downloads.sourceforge.net/project/scribus/scribus/1.6.4/scribus-1.6.4.tar.xz
+        sha256: 533be7af03acfaa736ec5f7a3fc2562abd200fef5ca2a7cdee02b5f44d61829e
       - type: patch
         paths:
           - patches/scribus-appdata.patch
