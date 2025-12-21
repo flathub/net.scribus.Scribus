@@ -1,7 +1,7 @@
 app-id: net.scribus.Scribus
 
 runtime: org.kde.Platform
-runtime-version: 5.15-24.08
+runtime-version: 5.15-25.08
 sdk: org.kde.Sdk
 
 command: scribus
@@ -27,11 +27,13 @@ modules:
   - name: tkinter
     buildsystem: simple
     build-commands:
-      - pip3 install --prefix=${FLATPAK_DEST} .
+      - pip3 install --prefix=${FLATPAK_DEST} --no-build-isolation .
     sources:
       - type: git
         url: https://github.com/iwalton3/tkinter-standalone
         commit: 88aa05075d90d393a29a484bce676e237d311082
+      - type: patch
+        path: patches/tkinter-build.patch
     modules:
       - name: tcl
         buildsystem: autotools
@@ -80,6 +82,7 @@ modules:
       - -DPODOFO_BUILD_LIB_ONLY=1
       - -DPODOFO_BUILD_SHARED=1
       - -DPODOFO_BUILD_STATIC=0
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://downloads.sourceforge.net/project/podofo/podofo/0.9.8/podofo-0.9.8.tar.gz
@@ -157,6 +160,8 @@ modules:
           - /share/pkgconfig
 
   - name: ghostscript
+    build-options:
+      cflags: -std=gnu18
     config-opts:
       - --with-system-libtiff
       - --disable-cups
@@ -238,7 +243,9 @@ modules:
         url: https://dev-www.libreoffice.org/src/libmspub-0.1.4.tar.xz
         sha256: ef36c1a1aabb2ba3b0bedaaafe717bf4480be2ba8de6f3894be5fd3702b013ba
       - type: patch
-        path: patches/libmspub-0.1.4-gcc10.patch
+        paths:
+          - patches/libmspub-0.1.4-gcc10.patch
+          - patches/libmspub-0.1.4-gcc15.patch
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -377,6 +384,7 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/openscenegraph/OpenSceneGraph.git
