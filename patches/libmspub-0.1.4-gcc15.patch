@@ -1,0 +1,13 @@
+diff --git a/src/lib/Coordinate.h b/src/lib/Coordinate.h
+index bec3fe2..b87608d 100644
+--- a/src/lib/Coordinate.h
++++ b/src/lib/Coordinate.h
+@@ -10,6 +10,8 @@
+ #ifndef INCLUDED_COORDINATE_H
+ #define INCLUDED_COORDINATE_H
+ 
++#include <cstdint>
++
+ #include "MSPUBConstants.h"
+ 
+ namespace libmspub
