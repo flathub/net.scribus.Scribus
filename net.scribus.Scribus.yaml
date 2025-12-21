@@ -330,7 +330,7 @@ modules:
       - /lib/pkgconfig
       - '*.la'
 
-  # OSG wants ffmpeg 4 and not 5 (in the runtime).
+  # OSG wants ffmpeg 4 and not 7 (in the runtime).
   # Unsure of the options.
   - name: ffmpeg
     config-opts:
