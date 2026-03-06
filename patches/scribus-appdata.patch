@@ -19,7 +19,7 @@ index c38ef6b..e753dc9 100644
    <description>
    <p>Scribus is a cross-platform open source page layout program which
  produces commercial grade output in PDF and Postscript.</p>
-@@ -31,7 +33,10 @@
+@@ -31,7 +33,11 @@
      </screenshot>
    </screenshots>
    <update_contact>scribus-dev@lists.scribus.net</update_contact>
@@ -28,6 +28,7 @@ index c38ef6b..e753dc9 100644
 +  <developer_name>Scribus developers</developer_name>
 +  <launchable type="desktop-id">net.scribus.Scribus.desktop</launchable>
    <releases>
++    <release version="1.6.5" date="2025-12-15" type="stable"/>
 +    <release version="1.6.4" date="2025-04-20" type="stable"/>
      <release version="1.6.3" date="2025-01-08" type="stable"/>
      <release version="1.6.2" date="2024-06-15" type="stable"/>
